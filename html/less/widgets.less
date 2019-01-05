@@ -1,0 +1,467 @@
+@import "mixins";
+
+/*-----------------------------------*/
+/* SideBar Widget Styles */
+/*-----------------------------------*/
+
+.widget-sidebar {
+	margin-bottom: @section-margin * 1.2;
+	@media @md {margin-bottom: @section-margin;}
+
+	.widget-title {
+		font-family: @font1;
+		font-size: @font-size-h5;
+		font-weight: 500;
+		color: @color-dark2;
+		text-transform: none;
+		padding-bottom: .4em;
+		margin-bottom: 1.2em;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			.size(70px, 2px);
+			background-color: @color-green;
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Footer Widget Styles */
+/*-----------------------------------*/
+
+.widget-footer {
+	margin-bottom: @section-margin;
+
+	.widget-title {
+		font-size: @font-size - 2;
+		font-weight: 600;
+		color: @color-lightGray;
+		letter-spacing: .2em;
+		text-transform: uppercase;
+		margin-bottom: 2.6em;
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Gallery */
+/*-----------------------------------*/
+
+.widget-gallery {
+	ul {
+		font-size: 0;
+		margin: -5px -5px 0;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: top;
+		width: 33.33%;
+		padding: 5px;
+		@media @sm {width: 16.66%;}
+		@media @xxs {width: 33.33%;}
+	}
+
+	a {
+		display: block;
+		.transition();
+		&:hover, &:active {opacity: .8;}
+	}
+
+	img {width: 100%;}
+}
+
+/*-----------------------------------*/
+/* Widget Twitter */
+/*-----------------------------------*/
+
+.widget-twitter {
+	.tweet {
+		padding-left: 26px;
+		margin: 0 0 20px;
+		position: relative;
+
+		&:before {
+			content: '\f099';
+			.fa-icon-font();
+			font-size: 16px;
+			color: @color-twitter;
+			position: absolute;
+			top: 3px;
+			left: 0;
+		}
+
+		.tweet-link {
+			display: inline-block;
+			font-size: @font-size - 2;
+			font-style: italic;
+			line-height: 1.5;
+			color: @color-lightGray;
+			margin-bottom: .3em;
+			&:hover, &:active {color: @color-twitter;}
+		}
+
+		.tweet-date {
+			font-size: @font-size - 3;
+			line-height: 1.5;
+			color: @color-yellow;
+		}
+	}
+
+	&.widget-sidebar {
+		.tweet {
+			font-size: @font-size - 2;
+			p {margin-bottom: .6em;}
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Text */
+/*-----------------------------------*/
+
+.widget_text p {
+	font-size: @font-size - 2;
+	line-height: 1.8;
+	margin: 0;
+}
+
+/*-----------------------------------*/
+/* Widget Categories */
+/*-----------------------------------*/
+
+.widget_categories {
+	li {
+		margin-bottom: 1px;
+
+		&.current-cat a {
+			color: @color-white;
+			background-color: @color-green;
+		}
+	}
+
+	a {
+		.clearfix();
+		display: block;
+		padding: 14px 16px;
+		font-size: @font-size - 1;
+		color: @color-dark2;
+		background-color: negation(@color-light, #040404);
+		border-radius: @border-radius;
+		.transition();
+
+		&:hover, &:active {
+			color: @color-white;
+			background-color: @color-green;
+		}
+
+		span {
+			float: right;
+			font-size: @font-size - 3;
+			margin-top: 1px;
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Tags */
+/*-----------------------------------*/
+
+.tagcloud {
+	font-size: 0;
+	margin-right: -8px;
+
+	a {
+		position: relative;
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		font-size: @font-size - 3 !important;
+		@media @md {font-size: 12px !important;}
+		color: @color-dark2;
+		letter-spacing: .04em;
+		text-transform: uppercase;
+		padding: 0 1em 0 1.4em;
+		margin: 0 8px 8px 0;
+		max-width: 100%;
+		background-color: @color-light;
+		border-radius: @border-radius;
+		.ellipsis();
+		.transition();
+
+		&:before {
+			content: '';
+			.size(8px);
+			border-radius: 50%;
+			background-color: @body-background;
+			position: absolute;
+			top: 4px;
+			left: 4px;
+		}
+
+		&:hover, &:active {
+			background-color: @color-green;
+			color: @color-white;
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Log In */
+/*-----------------------------------*/
+
+.widget-login {
+	.forgot {
+		float: right;
+		margin-top: 11px;
+		font-size: @font-size - 2;
+		color: @color-blue;
+		&:hover, &:active {color: darken(@color-blue, 10%);}
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Subscribe */
+/*-----------------------------------*/
+
+.widget_mc4wp_form_widget {
+	p {
+		font-size: @font-size - 2;
+		line-height: 1.4;
+		margin-bottom: 1.2em;
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Calendar */
+/*-----------------------------------*/
+
+.widget_calendar {
+	table {
+		width: 100%;
+		font-family: @font1;
+		font-size: @font-size - 1;
+		@media @md {font-size: 14px;}
+		text-align: center;
+		border: none;
+		position: relative;
+
+		thead {
+			margin-bottom: 24px;
+			font-size: @font-size - 3;
+
+			th {
+				text-transform: uppercase;
+				color: @color-black;
+				text-align: center;
+				background: none;
+				font-size: 11px;
+				padding-bottom: 10px;
+			}
+		}
+
+		tbody {
+			td, td span {
+				padding: 11px 4px;
+			}
+		}
+
+		caption {
+			height: 24px;
+			line-height: 24px;
+			font-size: @font-size + 1;
+			@media @md {font-size: 15px;}
+			color: @color-black;
+			text-align: center;
+			text-transform: uppercase;
+			margin-bottom: 26px;
+		}
+
+		#today {
+			position: relative;
+			z-index: 0;
+			padding-left: 0;
+			padding-right: 0;
+			color: @color-white;
+
+			&:before {
+				content: '';
+				.absolute(@z-index: -1);
+				background-color: @color-green;
+				border-radius: 50%;
+			}
+		}
+
+		tfoot {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			a {
+				display: inline-block;
+				overflow: hidden;
+				text-indent: 1000px;
+			}
+
+			tr td {
+				&#prev a,
+				&#next a {
+					.md-icon-font();
+					position: absolute;
+					top: -2px;
+					right: 0;
+					.size(30px);
+					font-size: 20px;
+					color: @color-black;
+					display: block;
+					border-radius: 50%;
+					.transition();
+
+					&:hover, &:active {color: @link-color-hover;}
+
+					&:active {background-color: fade(@color-dark2, 6%);}
+
+					&:before {
+						content: 'keyboard_arrow_right';
+						line-height: 30px;
+						text-align: center;
+						text-indent: 0;
+						.absolute();
+					}
+				}
+
+				&#prev a {
+					right: auto;
+					left: 0;
+					&:before {content: 'keyboard_arrow_left';}
+				}
+			}
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Facebook */
+/*-----------------------------------*/
+
+.widget-facebook {
+	img, iframe {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+/*-----------------------------------*/
+/* Widget About The Author */
+/*-----------------------------------*/
+
+.widget-author {
+	position: relative;
+	min-height: 156px;
+	padding: 28px 30px 18px 160px;
+	margin-bottom: @section-margin * 1.4;
+	@media @sm {padding: 28px 15px 20px 160px;}
+	@media @xs {padding-left: 130px; margin-bottom: @section-margin;}
+	@media @xxs {padding: 20px 15px;}
+
+	.avatar {
+		position: absolute;
+		top: 26px;
+		left: 30px;
+		.size(100px);
+		border-radius: 50%;
+		overflow: hidden;
+		@media @sm {left: 15px;}
+		@media @xxs {position: static; margin-bottom: 10px;}
+
+		img {
+			width: 100%;
+			border-radius: 50%;
+		}
+	}
+
+	.name {
+		font-size: @font-size-h4;
+		color: @color-dark2;
+		margin-bottom: .3em;
+
+		a {
+			color: @color-dark2;
+			&:hover, &:active {color: @link-color;}
+		}
+	}
+
+	.job {
+		font-style: italic;
+		letter-spacing: .02em;
+		color: @color-gray;
+		margin-bottom: .8em;
+	}
+
+	.description {
+		@media @md {font-size: @font-size-sm;}
+		@media @xs {font-size: @font-size-xs;}
+	}
+}
+
+/*-----------------------------------*/
+/* Widget Skills */
+/*-----------------------------------*/
+
+.widget-skills {
+	.skill {
+		margin-bottom: @section-margin * .8;;
+
+		.skill-title {
+			font-weight: 600;
+			line-height: 1.4;
+			color: @color-black;
+			.ellipsis();
+			margin-bottom: 18px;
+		}
+
+		.skill-percentage {
+			position: absolute;
+			top: -36px;
+			right: -10px;
+			background-color: @color-gray;
+			padding: 4px;
+			border-radius: 2px;
+			line-height: 1;
+
+			&:before {
+				content: '';
+				border-top: 4px solid @color-gray;
+				border-left: 3px solid transparent;
+				border-right: 3px solid transparent;
+				position: absolute;
+				left: 50%;
+				bottom: -3px;
+				margin-left: -3px;
+			}
+		}
+
+		.progress {
+			height: 4px;
+			background-color: transparent;
+			border-radius: 2px;
+			margin: 0;
+			overflow: visible;
+			.box-shadow(none);
+		}
+
+		.progress-bar {
+			position: relative;
+			//min-width: 25%;
+			border-radius: 2px;
+			background-color: @color-green;
+			.box-shadow(none);
+			.transition(width .2s linear);
+		}
+	}
+}
+

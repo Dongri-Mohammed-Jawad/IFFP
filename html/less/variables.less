@@ -1,0 +1,162 @@
+// Media Queries
+@media-xxs:	    479px; // appears 320px - 479px
+@media-xs:	    767px; // appears 480px - 767px
+@media-sm:	    991px; // appears 768px - 991px
+@media-md:	    1229px; // appears 992px - 1229px
+@media-xmd:	    1359px; // appears 1230px - 1359px
+@media-lg:	    1599px; // appears 1360px - 1599px
+@media-xlg:	    1799px; // appears 1600px - 1799px
+
+@xxs:		    ~'only screen and (max-width: @{media-xxs})';
+@xs:		    ~'only screen and (max-width: @{media-xs})';
+@sm:		    ~'only screen and (max-width: @{media-sm})';
+@md:		    ~'only screen and (max-width: @{media-md})';
+@xmd:		    ~'only screen and (max-width: @{media-xmd})';
+@lg:		    ~'only screen and (max-width: @{media-lg})';
+@xlg:		    ~'only screen and (max-width: @{media-xlg})';
+
+// Transition Options
+@transition-duration:   	    .2s; // Transition Duration
+@transition-easing: 	        ease-out; // Transition Timing Function
+
+// Alternative Transition Options
+@transition-duration2:  	    .4s; // Transition Duration
+@transition-easing2: 	        cubic-bezier(.36, .96, .54, 1.2); // Transition Timing Function
+
+// Flip Time
+@flip-duration:  	            1s; // Flipping Effect Time
+
+// Section Paddings
+@section-padding-top:           90px;
+@section-padding-bottom:        90px;
+
+// Blocks Bottom Margins
+@section-margin:                50px;
+
+// Border Radius for Buttons, etc.
+@border-radius:                 3px;
+
+// Images
+@images-path:			        'images'; // Relative path from styles to the Images Folder
+
+// Fonts
+@fonts-path:			        'fonts'; // Relative path from styles to the Fonts Folder
+@iconic-font-name:		        'onehope'; // Iconic Font Name
+@iconic-font-name2:		        'FontAwesome'; // FontAwesome
+@iconic-font-name3:		        'Material Icons'; // Material Icons
+@font1:					        'Roboto', sans-serif;
+@font2:					        'Raleway', sans-serif;
+
+// Base Colors
+@color-white:		    	    #fff;
+@color-light:		    	    #f3f3f3;
+@color-light2:		    	    #e9e9e9;
+@color-lightGray:	    	    #d4d4d4;
+@color-gray:	    	        #b3b3b3;
+@color-gray2:	    	        #9a9c9d;
+@color-dark:		    	    #4b4b4b;
+@color-dark2:		    	    #232829;
+@color-black:		    	    #000;
+@color-green:			        #0fa76c;
+@color-green2:			        #04794c;
+@color-yellow:			        #fdd227;
+@color-yellow:			        #efc427;
+@color-blue:			        #09b9e5;
+@color-red:			            #fe2231;
+@color-twitter:			        #1da1f2;
+
+// Global Font
+@font-family:			    	@font1; // Font Family
+@font-size:				    	16px; // Font Size
+@font-size-xmd:			    	@font-size; // Font Size for Medium Devices
+@font-size-md:				    @font-size; // Font Size for Medium Devices
+@font-size-sm:				    @font-size - 1; // Font Size for Small Devices
+@font-size-xs:				    @font-size - 2; // Font Size for Extra Small Devices
+@font-weight:				    400; // Font Weight
+@font-color:				    @color-dark; // Font Color
+@letter-spacing:			    0; // Letter Spacing
+@paragraph-line-height:         1.5; // line-height for <p>
+@paragraph-margin-bottom:       1em; // margin-bottom for <p>
+
+// Preloader Color
+@preloader-color:			    @color-green;
+@preloader-size:			    100px;
+@preloader-weight:			    2px;
+
+// Body Background
+@body-background:			    @color-white;
+
+// Headings
+@headings-font-family:		    @font2;
+@font-size-h1:				    64px;
+@font-size-h2:				    32px;
+@font-size-h3:				    28px;
+@font-size-h4:				    24px;
+@font-size-h5:				    20px;
+@font-size-h6:				    16px;
+@headings-font-weight:		    700;
+@headings-line-height:		    1;
+@headings-color:			    @color-dark2;
+@headings-text-transform:	    none;
+@headings-letter-spacing:	    0;
+@headings-margin-bottom:	    .8em;
+
+// Links
+@link-color:				    @color-green; // Link Color
+@link-color-hover:			    @color-green2; // Link Color on Hover
+
+// Buttons
+@button-color:				    @color-green; // Button Color 1
+@button-color2:			        @color-white; // Button Color 2
+@button-font-family:		    @font1; // Button Font Family
+@button-font-size:			    @font-size - 2; // Button Font Size
+@button-font-weight:		    500; // Button Font Weight
+@button-letter-spacing:		    0; // Button Letter Spacing
+@button-height:				    36px; // Button Height
+@button-sm-height:			    30px; // Small Button Height
+@button-md-height:			    44px; // Medium Button Height
+@button-lg-height:			    54px; // Large Button Height
+@button-border-width:		    0; // Button Border Thickness
+@button-border-radius:		    @border-radius; // Button Border Radius
+
+// Form Elements
+@input-height:				    44px; // Input Height
+@input-padding:				    1em; // Input Padding (left and right)
+@input-margin:				    20px; // Input Margin (bottom)
+@input-border-width:		    1px; // Input Border Thickness
+@input-border-color:		    @color-lightGray; // Input Border Color
+@input-border-color-focus:	    @color-gray2; // Input Border Color on Focus
+@input-border-radius:		    @border-radius; // Input Border Radius
+@input-background-color:	    transparent; // Input Background Color
+@input-background-color-focus:  @color-white; // Input Background Color on Focus
+@input-font-family:			    @font1; // Input Font Family
+@input-font-size:			    @font-size - 1; // Input Font Size
+@input-font-weight:			    400; // Input Font Weight
+@input-font-style:			    normal; // Input Font Style
+@input-font-color:			    @color-dark; // Input Font Color
+@input-letter-spacing:		    0; // Input Letter Spacing
+@placeholder-font-style:	    italic; // Placeholder Font Style
+@placeholder-font-color:	    @color-gray; // Placeholder Font Color
+@label-font-color:			    @color-dark; // Label Font Color
+@checkbox-color:                @color-green; // CheckBox, RadioButton Main Color
+
+// Selection Colors
+@selection-font-color:          @color-white;
+@selection-bg-color:            @color-green;
+
+// Main Menu
+@menu-font-family:              @font1;
+@menu-font-size:                @font-size - 2;
+@menu-font-weight:              400;
+@menu-bg-color:                 fade(@color-black, 30%);
+@submenu-bg-color:              @color-white;
+@submenu-item-bg-color:         @color-light2;
+@menu-sticky-bg-color:          @color-white;
+@menu-font-color:               @color-light2;
+@submenu-font-color:            @color-dark;
+@menu-font-color-hover:         @color-yellow;
+@menu-shadow:                   0 1px 4px fade(@color-black, 26%);
+
+// Page Loader Colors
+@loader-color1:                 @color-green;
+@loader-color2:                 @color-white;

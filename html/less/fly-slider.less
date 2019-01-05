@@ -1,0 +1,107 @@
+@import "mixins";
+
+/*-----------------------------------*/
+/* Fly Slider */
+/*-----------------------------------*/
+
+.fly-slider {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	background-color: @color-dark;
+	.perspective(1000px);
+	.transform-style();
+	.transition(opacity 1s);
+	opacity: 1;
+	&.invisible {opacity: 0;}
+
+	.cube {
+		position: relative;
+		//.perspective(1000px);
+		-ms-perspective: 1000px; // IE Fix
+		.transform-style();
+	}
+
+	.slide {
+		.absolute();
+		.background-size();
+		//.backface-visibility(); // Bad for Chrome, IE
+		.transform-style();
+		opacity: 0;         // IE Fix
+		text-align: center;
+		will-change: transform, opacity;
+
+		&.active {
+			opacity: 1;     // IE Fix
+
+			.slide-content {
+				.transform(translate3d(0, 0, 0));
+				@media @xs {.transform(none);}
+			}
+		}
+
+		&.prev {
+			.slide-content {
+				.transform(translate3d(0, 200%, 0));
+				@media @xs {.transform(none);}
+			}
+		}
+
+		&.next {
+			.slide-content {
+				.transform(translate3d(0, -200%, 0));
+				@media @xs {.transform(none);}
+			}
+		}
+
+		&:before {
+			content: '';
+			.absolute();
+			background-color: fade(@color-dark, 45%);
+		}
+
+		&:after {
+			content: '';
+			.size(0, 100%);
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.slider-control {
+		-webkit-transform: translate3d(0, 0, 4px); // For Safari
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: auto;
+		z-index: 4;
+		.size(48px, 54px);
+		@media @xxs {width: 32px;}
+		border-radius: 0 @border-radius @border-radius 0;
+		margin-top: -27px;
+		background-color: fade(@color-black, 20%);
+		font-size: 32px;
+		color: @color-white;
+		line-height: 54px;
+		text-align: center;
+		.transition();
+
+		&:hover, &:active {
+			background-color: fade(@color-black, 40%);
+		}
+
+		&.next {
+			left: auto;
+			right: 0;
+			border-radius: @border-radius 0 0 @border-radius;
+		}
+	}
+
+	.slide-content {
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 80%;
+		position: relative;
+		will-change: transform;
+	}
+}

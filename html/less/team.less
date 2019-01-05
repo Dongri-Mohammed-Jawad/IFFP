@@ -1,0 +1,123 @@
+@import "mixins";
+
+/*-----------------------------------*/
+/* Team Members Layout */
+/*-----------------------------------*/
+
+.fly-team-members {
+	font-size: 0;
+	margin: 0 -15px;
+	flex-wrap: wrap;
+
+	.column {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		flex-basis: 50%;
+		@media @xs {width: 100%; flex-basis: 100%;}
+		padding: 0 15px 20px;
+		@media @md {padding: 0 10px 20px;}
+		@media @sm {padding: 0 15px 20px;;}
+
+		.fly-card {
+			margin-bottom: 0;
+			&, .boxed {height: 100%;}
+		}
+	}
+
+	&.columns3 {
+		margin: 0 -15px;
+
+		.column {
+			width: 33.33%;
+			flex-basis: 33.33%;
+			@media @sm {width: 50%; flex-basis: 50%;}
+			@media @xs {width: 100%; flex-basis: 100%;}
+		}
+	}
+
+	&.columns4 {
+		margin: 0 -15px;
+
+		.column {
+			width: 25%;
+			flex-basis: 25%;
+			//@media @xmd {width: 33.33%; flex-basis: 33.33%;}
+			@media @sm {width: 50%; flex-basis: 50%;}
+			@media @xs {width: 100%; flex-basis: 100%;}
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Team Member */
+/*-----------------------------------*/
+
+.fly-team-member {
+	.font-size();
+
+	.member-content {
+		padding: 30px;
+		@media @xs {padding: 20px;}
+	}
+
+	.member-name {
+		font-family: @font2;
+		font-size: @font-size + 2;
+		font-weight: 600;
+		color: @color-dark2;
+		margin-bottom: .4em;
+	}
+
+	.member-position {
+		font-size: @font-size;
+		color: @color-gray2;
+		margin-bottom: 24px;
+		@media @md {font-size: @font-size - 2;}
+	}
+
+	.member-link i {
+		vertical-align: middle;
+		margin-right: 6px;
+	}
+
+	.flip-back {
+		background-color: @color-green;
+		overflow: hidden;
+		padding: 30px 20px;
+
+		.member-name {
+			color: @color-white;
+			margin-bottom: 1em;
+		}
+	}
+
+	.member-description {
+		font-size: @font-size - 2;
+		color: @color-white;
+		@media @md {font-size: @font-size - 3;}
+		@media @sm {font-size: @font-size - 2;}
+
+		p {
+			line-height: 2;
+			margin-bottom: 0;
+		}
+	}
+
+	.card-social {
+		padding: 8px 5px 16px;
+		overflow: visible;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -14px;
+			left: 0;
+			right: 0;
+			height: 15px;
+			.gradient(fade(@color-green, 0%), @color-green);
+		}
+	}
+}
+

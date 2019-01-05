@@ -1,0 +1,66 @@
+@import "mixins";
+
+/*-----------------------------------*/
+/* Header */
+/*-----------------------------------*/
+
+.video-container {
+	.absolute(@z-index: 0);
+	overflow: hidden;
+
+	iframe {max-width: none;} //For proper video fit
+}
+
+.header {
+	position: relative;
+}
+
+/*-----------------------------------*/
+/* Video or Image in Header */
+/*-----------------------------------*/
+
+.fly-header {
+	position: relative;
+	z-index: 0;
+	text-align: center;
+	.background-size();
+
+	padding-top: 230px;
+	padding-bottom: 170px;
+
+	@media @md {
+		padding-top: 200px;
+		padding-bottom: 150px;
+	}
+
+	@media @sm {
+		padding-top: 150px;
+		padding-bottom: 140px;
+	}
+
+	@media @xs {
+		padding-top: 120px;
+		padding-bottom: 100px;
+	}
+
+	&.full-height {
+		padding-top: 100px;
+		padding-bottom: 0;
+	}
+
+	&:after {
+		content: '';
+		.size(0, 100%);
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.fly-header-content {
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 80%;
+		position: relative;
+		z-index: 1;
+	}
+}
+

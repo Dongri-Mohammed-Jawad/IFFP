@@ -1,0 +1,215 @@
+@import "mixins";
+
+/*-----------------------------------*/
+/* Technical Styles */
+/*-----------------------------------*/
+
+.scrollbar-detect {
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow: scroll;
+	span {display: block;}
+}
+
+.full-height {height: 100vh;}
+
+@media @sm {
+	.screen-resolution {display: none;}
+}
+
+/*-----------------------------------*/
+/* Overlay */
+/*-----------------------------------*/
+
+.overlay {
+	position: relative;
+
+	&:before {
+		content: '';
+		.absolute(@z-index: 1;);
+		background-color: fade(@color-dark, 45%);
+	}
+}
+
+/*-----------------------------------*/
+/* Logo */
+/*-----------------------------------*/
+
+.logo {
+	font-family: @font2;
+	font-size: 22px;
+	text-align: center;
+
+	img {max-width: 130px;}
+
+	a {
+		color: @color-white;
+		display: inline-block;
+		.sticky & {color: @color-yellow;}
+
+		span {font-weight: 600;}
+	}
+}
+
+.navigation-bar .logo {
+	flex-basis: 97px;
+
+	.no-flexbox & {
+		//float: left;
+		display: inline-block;
+		@media @sm {float: left; margin-top: 5px;}
+	}
+
+	.logo-sticky {display: none;}
+
+	.sticky& {
+		.logo-sticky {display: block;}
+		.logo-normal {display: none;}
+	}
+}
+
+/*-----------------------------------*/
+/* Map */
+/*-----------------------------------*/
+
+.google-map {
+	height: 440px;
+	margin-bottom: @section-margin * 1.2;
+	@media @md {height: 360px;}
+	@media @xs {height: 260px; margin-bottom: @section-margin * .8;}
+	@media @xxs {height: 200px;}
+
+}
+
+/*-----------------------------------*/
+/* Page Title */
+/*-----------------------------------*/
+
+.page-title {
+	font-size: @font-size-h1;
+	font-weight: 500;
+	color: @color-white;
+	text-align: center;
+	letter-spacing: .1em;
+	margin-bottom: .5em;
+
+	@media @lg {font-size: @font-size-h1 - 6;}
+	@media @md {font-size: 48px;}
+	@media @sm {font-size: 36px;}
+	@media @xs {font-size: 28px;}
+	@media @xxs {font-size: 26px;}
+
+	.fly-header:not(.full-height) & {
+		font-size: @font-size-h2 * 1.5;
+		font-weight: 600;
+		margin-bottom: 0;
+		@media @sm {font-size: 36px;}
+		@media @xs {font-size: 28px;}
+		@media @xxs {font-size: 26px;}
+	}
+}
+
+/*-----------------------------------*/
+/* Page Subtitle */
+/*-----------------------------------*/
+
+.page-subtitle {
+	font-family: @font2;
+	font-size: @font-size-h2;
+	font-weight: 300;
+	color: @color-white;
+	text-align: center;
+	letter-spacing: .2em;
+	margin-bottom: 2.8em;
+
+	@media @lg {font-size: @font-size-h3;}
+	@media @md {font-size: 22px;}
+	@media @sm {font-size: 18px;}
+	@media @xs {font-size: 16px; letter-spacing: .1em;}
+
+	.fly-header:not(.full-height) & {
+		font-size: @font-size;
+		text-transform: uppercase;
+		margin-bottom: 1.4em;
+		@media @xxs {font-size: 14px;}
+	}
+}
+
+/*-----------------------------------*/
+/* Styled Title */
+/*-----------------------------------*/
+
+.title-styled {
+	font-family: @font1;
+	font-size: @font-size-h4;
+	font-weight: 500;
+	color: @color-dark2;
+	text-transform: none;
+	padding-bottom: .4em;
+	margin-bottom: 2em;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		.size(70px, 2px);
+		background-color: @color-green;
+	}
+}
+
+/*-----------------------------------*/
+/* Become a Volunteer Button */
+/*-----------------------------------*/
+
+.volunteer-cta {
+	.btn {
+		margin-bottom: 15px;
+
+		&.btn-large {
+			@media @xs {font-size: 14px;}
+
+			@media @xxs {
+				padding: 0 1.5em !important;
+				i {display: none;}
+			}
+		}
+	}
+
+	.note {
+		font-family: @font2;
+		font-size: 14px;
+		color: @color-white;
+		text-align: center;
+
+		.fly-slider &,
+		.main-slider & {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+	}
+}
+
+/*-----------------------------------*/
+/* Back To Top Button */
+/*-----------------------------------*/
+
+a.back-to-top {
+	.size(50px);
+	background-color: @color-yellow;
+	border-radius: 50%;
+	position: absolute;
+	top: -25px;
+	right: 0;
+	font-size: 32px;
+	color: @color-white;
+	line-height: 50px;
+	text-align: center;
+	.transition();
+
+	&:hover, &:active {
+		background-color: @color-green;
+	}
+}
